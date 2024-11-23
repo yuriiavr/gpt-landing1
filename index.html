@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberpunk Innovation Hub</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+      body {
+        margin: 0;
+        font-family: "Orbitron", sans-serif;
+        color: #fff;
+        background: url("./body.jpg") no-repeat center center/cover;
+        overflow-x: hidden;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        border-bottom: 2px solid #00ffff;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header .logo {
+        font-size: 2rem;
+        color: #ff00ff;
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        position: relative;
+      }
+
+      header .logo::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #00ffff;
+        text-shadow: -2px 0 #00ffff, 2px 2px #00ffff, -2px -2px #00ffff;
+        overflow: hidden;
+        animation: glitch 1.5s infinite linear;
+      }
+
+      nav a {
+        color: #00ffff;
+        text-decoration: none;
+        margin: 0 15px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #ff00ff;
+      }
+
+      @keyframes glitch {
+        0% {
+          clip-path: inset(0 0 50% 0);
+          transform: translate(-5px);
+        }
+        50% {
+          clip-path: inset(50% 0 0 0);
+          transform: translate(5px);
+        }
+        100% {
+          clip-path: inset(0 0 50% 0);
+          transform: translate(-5px);
+        }
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(to right, #00000045, #00000045),
+          url("./hero.jpg") no-repeat center center/cover;
+        animation: fadeIn 3s ease-in-out;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        color: #ffff00;
+        text-shadow: 0 0 10px #ffff00, 0 0 40px #ffff00;
+        animation: glow 1.5s infinite alternate;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        max-width: 600px;
+        margin: 20px auto;
+        color: #ffffff;
+        text-shadow: 0 0 10px #ffffff;
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #fff;
+        background: linear-gradient(to right, #ff00ff, #00ffff);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-shadow: 0 0 10px #fff;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.2)
+        );
+        transition: left 0.5s ease-in-out;
+      }
+
+      .button:hover::before {
+        left: 100%;
+      }
+
+      .button:hover {
+        background: linear-gradient(to right, #00ffff, #ff00ff);
+        box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+        transform: scale(1.05);
+      }
+
+      .button:active {
+        transform: scale(0.95);
+        box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+      }
+
+      section {
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .services {
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+      }
+
+      .services h2 {
+        font-size: 2.5rem;
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+      }
+
+      .services img {
+        width: 250px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #00ffff;
+        transition: transform 0.3s ease;
+      }
+
+      .services img:hover {
+        transform: scale(1.1);
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #000;
+        border-top: 2px solid #00ffff;
+      }
+
+      footer a {
+        color: #00ffff;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo" data-text="CYBER-HUB">CYBER-HUB</div>
+      <nav style="margin-right: 20px">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1>Innovations for Tomorrow</h1>
+        <p>
+          Join the revolution in technology and explore the endless
+          possibilities of a cyberpunk future.
+        </p>
+        <button class="button">Get Started</button>
+      </div>
+    </div>
+
+    <section id="about" class="services">
+      <h2>About Cyber-Hub</h2>
+      <p>
+        Cyber-Hub is the gateway to the future. We specialize in cutting-edge
+        technologies, futuristic designs, and innovative solutions.
+      </p>
+      <img src="./button1.avif" alt="About Image" />
+      <img src="./button2.avif" alt="Innovation" />
+    </section>
+
+    <footer>
+      <p>© 2024 Cyber-Hub | <a href="#">Privacy Policy</a></p>
+    </footer>
+  </body>
+</html>
